@@ -3,9 +3,6 @@ languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Cupper"
 theme = "cupper-hugo-theme"
-googleAnalytics = "UA-123456789-1"
-disqusShortname = "yourdiscussshortname"
-enableGitInfo = true
 
 [taxonomies]
   tag = "tags"
@@ -23,7 +20,6 @@ enableGitInfo = true
   # For more date formats see https://gohugo.io/functions/format/
   dateFormat = "Jan 2, 2006"
   codePenUser = "someUser"
-  katex = true
 
 [menu]
   [[menu.nav]]

@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
     font-family: 'Miriam Libre';
-    src: url('{{ "/css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "/css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
+    src: url('{{ "css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -430,6 +430,19 @@ caption {
     margin-top: 0.5rem;
 }
 
+/* Disqus Comments */
+#disqus-container {
+  font-size: 0.85rem;
+  border: 1px solid;
+  padding: 1.5rem;
+}
+#disqus-button {
+  width: 100%;
+}
+#disqus-comments {
+  display: none; 
+}
+
 /* Pattern lists */
 .patterns-list {
     list-style: none;
@@ -444,18 +457,8 @@ caption {
     padding-top: 1rem;
     border-top: 2px solid;
 }
-.blog-roll-meta-data
- {
+.blog-roll-meta-data {
     margin-top: 12px;
-}
-.blog-description {
-    margin-top: 12px;
-}
-.blog-roll-meta-data .tags {
-    margin-top: 12px;
-}
-.blog-roll-meta-data i {
-    margin-top: 0px;
 }
 .patterns-list a {
     border: 0;

@@ -444,18 +444,8 @@ caption {
     padding-top: 1rem;
     border-top: 2px solid;
 }
-.blog-roll-meta-data
- {
+.blog-roll-meta-data {
     margin-top: 12px;
-}
-.blog-description {
-    margin-top: 12px;
-}
-.blog-roll-meta-data .tags {
-    margin-top: 12px;
-}
-.blog-roll-meta-data i {
-    margin-top: 0px;
 }
 .patterns-list a {
     border: 0;

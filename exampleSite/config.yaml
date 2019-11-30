@@ -3,9 +3,12 @@ languageCode: en-us
 defaultContentLanguage: en
 title: Cupper
 theme: cupper-hugo-theme
+<<<<<<< HEAD
 googleAnalytics: UA-123456789-1
 disqusShortname: yourdiscussshortname
 enableGitInfo: true
+=======
+>>>>>>> 4d06e29235e79c5809cb8687131210da5a1852b1
 
 taxonomies:
   tag: tags
