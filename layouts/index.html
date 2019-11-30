@@ -8,7 +8,8 @@
     <div class="blog-roll">
       <h2>Posts</h2>
       <ul class="patterns-list">
-      {{ range .Site.RegularPages.ByPublishDate.Reverse}}
+          {{ $paginator := .Paginate .Site.RegularPages.ByPublishDate.Reverse }}
+          {{ range $paginator.Pages }}
       <li class="list-post">
           <h2 class="blog-roll-title">
             <a href="{{ .Permalink }}">
@@ -47,6 +48,16 @@
         </li>
       {{ end }}
       </ul>
+    </div>
+    <div>
+      {{$pageNumber := $paginator.PageNumber }}
+        {{ if $paginator.HasPrev }}
+        <a href="/page/{{ sub $pageNumber 1 }}">Previous</a> &bull; 
+        {{ end }}
+      Page {{ $pageNumber }}
+      {{ if $paginator.HasNext }}
+       &bull; <a href="/page/{{ add $pageNumber 1 }}">Next</a>
+        {{ end }}
     </div>
     {{ end }}
   </main>
