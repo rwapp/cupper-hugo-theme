@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
     font-family: 'Miriam Libre';
-    src: url('{{ "/css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "/css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
+    src: url('{{ "css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -76,6 +76,12 @@ figure p img {
 }
 a {
   outline-offset: 2px;
+}
+
+/* Katex math typesetting */
+.katex * {
+    margin-top: 0;
+    background-color: transparent;
 }
 
 /* Fix for IE :( */
@@ -428,6 +434,18 @@ caption {
 .toc ol {
     margin-left: 0.75rem;
     margin-top: 0.5rem;
+}
+
+/* Disqus Comments */
+#disqus-container {
+  text-align: center;
+}
+#disqus-button {
+  width: 100%;
+  padding: 0.25em 0.75em;
+}
+#disqus-comments {
+  display: none; 
 }
 
 /* Pattern lists */

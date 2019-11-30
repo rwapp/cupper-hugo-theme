@@ -1,7 +1,7 @@
 /* Fonts */
 @font-face {
     font-family: 'Miriam Libre';
-    src: url('{{ "/css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "/css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
+    src: url('{{ "css/fonts/miriamlibre-bold.woff2" | absURL }}') format('woff2'), url('{{ "css/fonts/miriamlibre-bold.woff" | absURL }}') format('woff');
     font-weight: bold;
     font-style: normal;
 }
@@ -428,6 +428,19 @@ caption {
 .toc ol {
     margin-left: 0.75rem;
     margin-top: 0.5rem;
+}
+
+/* Disqus Comments */
+#disqus-container {
+  font-size: 0.85rem;
+  border: 1px solid;
+  padding: 1.5rem;
+}
+#disqus-button {
+  width: 100%;
+}
+#disqus-comments {
+  display: none; 
 }
 
 /* Pattern lists */

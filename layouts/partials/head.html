@@ -17,15 +17,22 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <link rel="canonical" href="{{ "/index.xml" | absURL }}" >
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="{{ "css/prism.css" | absURL }}" media="none" onload="this.media='all';">
+  <link rel="stylesheet" href="{{ "/css/prism.css" | absURL }}" media="none" onload="this.media='all';">
 
   {{ $templateStyles := resources.Get "css/template-styles.css" }}
   {{ $styles := $templateStyles | resources.ExecuteAsTemplate "css/styles.css" . }}
   <link rel="stylesheet" type="text/css" href="{{ $styles.Permalink }}">
 
+  <link rel="stylesheet" href="{{ "/fonts/font-awesome/css/font-awesome.min.css" | absURL }}">
+
+  {{ $styleSCSS := resources.Get "sass/main.scss" | resources.ToCSS }}
+  <link rel="stylesheet" type="text/css" href="{{ $styleSCSS.Permalink }}">
+
+  
   <style id="inverter" media="none">
     html { filter: invert(100%) }
     * { background-color: inherit }
