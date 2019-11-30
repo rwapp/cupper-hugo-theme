@@ -1,9 +1,12 @@
 {{ define "main" }}
   <main id="main">
     <h1>{{ .Title }}</h1>
+    <div>
+      {{ .Content }}
+    </div>
     <ul class="patterns-list">
     {{ range .Pages.ByPublishDate.Reverse }}
-      <li>
+      <li class="list-post">
         <h2 class="blog-roll-title">
           <a href="{{ .Permalink }}">
             <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">

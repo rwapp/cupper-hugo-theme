@@ -439,10 +439,23 @@ caption {
     font-size: 1.25rem;
     line-height: 1.6;
 }
-.patterns-list li + li {
+.list-post {
     margin-top: 1rem;
     padding-top: 1rem;
     border-top: 2px solid;
+}
+.blog-roll-meta-data
+ {
+    margin-top: 12px;
+}
+.blog-description {
+    margin-top: 12px;
+}
+.blog-roll-meta-data .tags {
+    margin-top: 12px;
+}
+.blog-roll-meta-data i {
+    margin-top: 0px;
 }
 .patterns-list a {
     border: 0;

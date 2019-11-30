@@ -4,11 +4,12 @@
     <div>
       {{ .Content }}
     </div>
+    {{ if .IsHome }}
     <div class="blog-roll">
       <h2>Posts</h2>
       <ul class="patterns-list">
-      {{ range (where .Pages "Section" "post" ).ByPublishDate.Reverse }}
-        <li>
+      {{ range .Site.RegularPages.ByPublishDate.Reverse}}
+      <li class="list-post">
           <h2 class="blog-roll-title">
             <a href="{{ .Permalink }}">
               <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
@@ -47,5 +48,6 @@
       {{ end }}
       </ul>
     </div>
+    {{ end }}
   </main>
 {{ end }}
