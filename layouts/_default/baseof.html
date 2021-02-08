@@ -2,7 +2,8 @@
 <html lang="{{ .Site.Language.Lang }}">
   {{ partial "head.html" . }}
   <body>
-    <a href="#main">skip to content</a>
+    <a href="#main">{{ T "skip_to_content" }}</a>
+    {{ partial "noscript.html" . }}
     {{ partial "svg.html" . }}
     <div class="wrapper">
       {{ partial "header.html" . }}
@@ -14,7 +15,9 @@
             
             {{ partial "social.html" . }}
           </div>
-          {{ partial "footer.html" . }}
+          {{ if ne .Site.Params.moveFooterToHeader true }}
+            {{ partial "footer.html" . }}
+          {{ end }}
         </div>
       </div>
     </div>
