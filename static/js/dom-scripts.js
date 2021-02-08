@@ -130,4 +130,10 @@
       }
     }
   });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    darkTheme(e.matches ? 'screen' : 'none');
+    checkbox.checked = e.matches;
+  });
+
 }());
