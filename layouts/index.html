@@ -1,13 +1,21 @@
 {{ define "main" }}
   <main id="main">
     <h1>{{ .Title }}</h1>
-    <div>
+        <div>
       {{ .Content }}
     </div>
+    {{ if site.Params.search }}
+  <input
+    id="search"
+    type="text"
+    placeholder="{{ T "search_placeholder" }}"
+    aria-label="{{ T "search_aria_label" }}"
+  />
+  {{ end }}
     {{ if .IsHome }}
     <div class="blog-roll">
       <h2>Posts</h2>
-      <ul class="patterns-list">
+      <ul class="patterns-list" id="list">
           {{ $paginator := .Paginate .Site.RegularPages.ByPublishDate.Reverse }}
           {{ range $paginator.Pages }}
       <li class="list-post">
