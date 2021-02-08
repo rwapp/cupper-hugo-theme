@@ -1,3 +1,20 @@
-<script src="{{ "/js/prism.js" | absURL }}"></script>
-<script src="{{ "/js/dom-scripts.js" | absURL }}"></script>
+
+
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "dff1cf41af33422e9a94397e3ef8f8d8"}'></script><!-- End Cloudflare Web Analytics -->
+
+{{ $templateDomScripts := resources.Get "js/template-dom-scripts.js" }}
+{{ $domScripts := $templateDomScripts | resources.ExecuteAsTemplate "js/dom-scripts.js" . }}
+<script src="{{ $domScripts.RelPermalink }}"></script>  
+
+<script src="{{ "js/prism.js" | relURL }}"></script>
+
+{{ if site.Params.search }}
+{{ $searchJs := resources.Get "js/search.js" | fingerprint }}
+<script src="{{ $searchJs.RelPermalink }}"></script>
+{{ $searchCss := resources.Get "css/search.css" | fingerprint }}
+<link rel="stylesheet" href="{{ $searchCss.RelPermalink }}"></link>
+{{ end }}
+
+{{ range .Site.Params.customJs }}
+  <script src="{{ . | relURL }}"></script>
+{{ end }}

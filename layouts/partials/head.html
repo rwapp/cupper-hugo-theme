@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   {{ hugo.Generator }}
-  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="canonical" href="{{ .RelPermalink }}">
 
   {{ if .IsHome }}
     {{ with .Site.Params.homeMetaContent }}
@@ -21,11 +21,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="{{ "/css/prism.css" | absURL }}" media="none" onload="this.media='all';">
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+    }
+  </style>
+
+  <link rel="stylesheet" href="{{ "css/prism.css" | relURL }}" media="none" onload="this.media='all';">
 
   {{ $templateStyles := resources.Get "css/template-styles.css" }}
   {{ $styles := $templateStyles | resources.ExecuteAsTemplate "css/styles.css" . }}
-  <link rel="stylesheet" type="text/css" href="{{ $styles.Permalink }}">
+  <link rel="stylesheet" type="text/css" href="{{ $styles.RelPermalink }}">
 
   <link rel="stylesheet" href="{{ "/fonts/font-awesome/css/font-awesome.min.css" | absURL }}">
 
@@ -35,6 +42,9 @@
     * { background-color: inherit }
     img:not([src*=".svg"]), .colors, iframe, .demo-container { filter: invert(100%) }
   </style>
+  {{ range .Site.Params.customCss }}
+    <link rel="stylesheet" href="{{ . | relURL }}">
+  {{ end }}
 
   {{ $title := print .Title " | " .Site.Title }}
   {{ if .IsHome }}
